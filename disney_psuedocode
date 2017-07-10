@@ -1,0 +1,43 @@
+disney_psuedocode
+
+ask user for name
+print welcome message
+ask user if they want to play
+    if no,
+        print goodbye message
+    if yes
+        print rules of game
+
+get a random Disney word from list
+print spaces indicating how many letters in hangman word
+ask user for letter guess
+compare letter guess to Disney hangman word
+    if letter guess is in hangman word
+        add guess to hangman word
+    if letter is not in hangman word
+        add letter to list of wrong guesses
+        show how many wrong guesses are left
+
+ask user for another letter or to solve
+    if user guesses letter already guessed
+        print letter already guessed message
+        ask for letter or solve
+    if solve,
+        ask user for word
+        compare to Disney Hangman word
+    if guess matches hangman word
+        print win message
+        ask if player want to play again?
+    if guess does not match
+        print wrong message
+        print how many attempts are left
+        ask for letter or solve
+    if solve attempts exceed number allotted
+        print lose message
+        print Disney Hangman word
+        play again?
+
+    if wrong letter guesses exceed allotted number
+    print lose message
+    print Disney Hangman word
+    play again?
