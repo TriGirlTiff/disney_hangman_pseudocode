@@ -1,4 +1,4 @@
-disney_psuedocode
+#disney_psuedocode
 
 ask user for name
 print welcome message
@@ -41,3 +41,4 @@ ask user for another letter or to solve
     print lose message
     print Disney Hangman word
     play again?
+
