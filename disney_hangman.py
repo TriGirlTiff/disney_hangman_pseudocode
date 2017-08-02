@@ -1,12 +1,22 @@
 import random
 
 dl_words = [
-# "FRONTIERLAND",
-# "FANTASYLAND",
-# "ADVENTURELAND",
-# "TOMORROWLAND",
-# "CHURRO",
-"HAUNTED MANSION"
+"FRONTIERLAND",
+"FANTASYLAND",
+"ADVENTURELAND",
+"TOMORROWLAND",
+"CHURRO",
+"HAUNTED MANSION",
+"PARADE",
+"FIREWORKS",
+"MICKEY",
+"MINNIE",
+"PLUTO",
+"DONALD",
+"GOOFY",
+"SPACE MOUNTAIN",
+"SPLASH MOUNTAIN",
+"MATTERHORN"
 ]
 # h_word = random.choice(dl_words)
 good_guesses =[]
@@ -16,17 +26,21 @@ def greeting():
     """greets player"""
     name = raw_input("What is your name? ")
     name = name.capitalize()
+    print
     print "Welcome {}! Let's play Disney hangman!".format(name)
+ 
 
 
 
 def rules():
     """Prints rules of game"""
     print 
-    print "These are the rules of the game. You can miss 4 letters or one solve attempt."
+    print "These are the rules of the game."
+    print "All of the hangman words are things that can be found in Disneyland in Anaheim, California."
+    print "You can miss 4 letters or one solve attempt."
 
 def should_guess_word():
-    """Player chooses to enter another letter or solve"""
+    """Player chooses to enter a letter or solve"""
     user_choice = raw_input ("\n\nPress enter to guess a letter or 2 to solve the puzzle. ")
     if user_choice == "2":
         return True
@@ -50,14 +64,18 @@ def get_word(dl_words):
 #         print "_ ", 
 
 def solve_guess(h_word):
+    """Allows user to guess the hangman word"""
     user_solve = raw_input ("What is the hangman word? ")
     user_solve = user_solve.upper()
     if user_solve == h_word:
+        print 
         print "You win! {} was the word!".format(h_word)
     else:
+        print
         print "Sorry,{} is not the hangman word".format(user_solve)
 
 def check_win(h_word, good_guesses):
+    """Checks to see if all the letters have been guessed"""
     for letter in h_word:
         if letter in good_guesses or letter == " ":
             continue
@@ -109,7 +127,7 @@ while num_bad_guesses < 4:
         elif user_guess not in h_word:
             bad_guesses.append(user_guess)
             num_bad_guesses += 1
-            print "{} isn't in the word, guess again".format(user_guess)
+            print "{} isn't in the word, guess again.".format(user_guess)
         
         elif user_guess in h_word:
             good_guesses.append(user_guess)
